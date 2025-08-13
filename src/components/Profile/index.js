@@ -10,7 +10,7 @@ export const Profile = () => (
   <div className={styles?.body}>
     <img className={styles?.avatar} src={avatar} alt="avatar" />
     <h1 className={styles?.name}>Thiago Feijó</h1>
-    <h2 className={styles?.role}>React Developer</h2>
+    <h2 className={styles?.role}>Software Developer</h2>
     <ul className={styles?.ul}>
       <li className={styles?.li}>
         <a href="https://github.com/thiagofeijodev/" target="_black" aria-label="Github">
