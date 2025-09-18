@@ -44,6 +44,9 @@ body {
   display: inline-block;
   position: relative;
   margin: 0px 10px;
+  width: 24px;
+  height: 24px;
+  fill: white;
 }
 
 .aIconLink {

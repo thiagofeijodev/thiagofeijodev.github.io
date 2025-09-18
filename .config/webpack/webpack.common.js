@@ -47,6 +47,7 @@ module.exports = {
     ],
   },
   output: {
+    filename: 'static/[name].[contenthash].js',
     publicPath: '/',
   },
   plugins: [
