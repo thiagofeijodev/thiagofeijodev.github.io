@@ -2,3 +2,56 @@ body {
   margin: 0px;
   font-family: 'Lato', sans-serif;
 }
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #212121;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.avatar {
+  width: 13rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #dadada;
+}
+
+.role {
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #dadada;
+  line-height: 2rem;
+}
+
+.ul {
+  list-style: none;
+  padding: 0;
+}
+
+.li {
+  display: inline-block;
+  position: relative;
+  margin: 0px 10px;
+}
+
+.aIconLink {
+  width: 50px;
+  height: 50px;
+}
+
+
+.aIconLink:hover {
+  filter: drop-shadow(2px 2px 10px gray);
+}
