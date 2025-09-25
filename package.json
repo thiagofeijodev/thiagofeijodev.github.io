@@ -2,11 +2,12 @@
   "name": "thiagofeijodev.github.io",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "homepage": "./",
   "scripts": {
-    "start": "webpack serve --mode development --config .config/webpack/webpack.dev.js",
-    "build": "webpack --mode production --config .config/webpack/webpack.prod.js",
-    "analyzer": "webpack --config .config/webpack/webpack.analyzer.js",
+    "start": "rspack serve --mode development --config .config/rspack/rspack.dev.js",
+    "build": "rspack --mode production --config .config/rspack/rspack.prod.js",
+    "analyzer": "rspack build --analyze  --mode development --config .config/rspack/rspack.prod.js",
     "lint": "eslint --ext js,jsx 'src/**/**.js' --max-warnings 0",
     "test": "jest --maxConcurrency=2 --maxWorkers=2",
     "prepare": "husky"
@@ -24,23 +25,21 @@
     "@babel/parser": "7.28.4",
     "@babel/preset-env": "7.28.3",
     "@babel/preset-react": "7.27.1",
+    "@rspack/cli": "^1.5.7",
+    "@rspack/core": "^1.5.7",
     "babel-loader": "10.0.0",
     "babel-plugin-inline-react-svg": "^2.0.2",
     "babel-plugin-module-resolver": "^5.0.2",
     "compression-webpack-plugin": "^11.1.0",
     "css-loader": "7.1.2",
     "favicons": "^7.2.0",
-    "favicons-webpack-plugin": "6.0.1",
+    "favicons-rspack-plugin": "^7.0.0",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "^5.6.4",
     "postcss-loader": "^8.2.0",
     "sharp": "^0.34.4",
     "style-loader": "^4.0.0",
-    "webpack": "5.101.3",
     "webpack-assets-manifest": "^6.2.2",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2",
-    "webpack-merge": "^6.0.1",
     "workbox-webpack-plugin": "7.3.0"
   },
   "optionalDependencies": {
@@ -59,7 +58,6 @@
     "gh-pages": "^6.3.0",
     "husky": "^9.1.7",
     "jest": "^30.1.3",
-    "jest-environment-jsdom": "^30.1.2",
-    "webpack-bundle-analyzer": "^4.10.2"
+    "jest-environment-jsdom": "^30.1.2"
   }
 }

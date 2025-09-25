@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from "eslint/config";
 import prettier from "eslint-plugin-prettier";
 import _import from "eslint-plugin-import";
@@ -82,7 +83,12 @@ export default defineConfig([{
         "import/prefer-default-export": 0,
 
         "import/no-extraneous-dependencies": ["warn", {
-            devDependencies: ["**/*test.js", "tests/setupTests.js"],
+            devDependencies: [
+                "**/*test.js",
+                ".config/**", 
+                "tests/setupTests.js",
+                "eslint.config.mjs"
+            ],
             optionalDependencies: true,
             peerDependencies: false,
             packageDir: "./",

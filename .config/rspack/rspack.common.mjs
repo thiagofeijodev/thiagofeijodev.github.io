@@ -1,8 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const path = require('path');
-const webpack = require('webpack');
+import rspack from '@rspack/core';
+import path from 'path';
 
-module.exports = {
+export default {
   entry: path.resolve(process.cwd(), 'src/index.js'),
   module: {
     rules: [
@@ -51,7 +50,7 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
-    new webpack.ProgressPlugin({
+    new rspack.ProgressPlugin({
       activeModules: false,
       entries: true,
       modules: true,
