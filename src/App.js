@@ -9,12 +9,12 @@ const App = () => (
     <h2 className={styles?.role}>Software Developer</h2>
     <ul className={styles?.ul}>
       <li className={styles?.li}>
-        <a href="https://github.com/thiagofeijodev/" target="_black" aria-label="Github">
+        <a href="https://github.com/thiagofeijodev/" target="_blank" aria-label="Github" rel="noreferrer">
           <GithubIcon alt="Github link" />
         </a>
       </li>
       <li className={styles?.li}>
-        <a href="https://www.linkedin.com/in/thiagofeijodev/" target="_black" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/thiagofeijodev/" target="_blank" aria-label="LinkedIn" rel="noreferrer">
           <LinkedinIcon alt="Linkedin link" />
         </a>
       </li>
