@@ -1,9 +1,9 @@
 {
-  "short_name": "thiagofeijor",
-  "name": "thiagofeijor",
+  "short_name": "thiagofeijodev",
+  "name": "thiagofeijodev",
   "description": "My website =]",
-  "start_url": "https://feijo.dev/",
-  "scope": "https://feijo.dev/",
+  "start_url": "/index.html",
+  "scope": "/",
   "dir": "ltr",
   "display_override": ["window-control-overlay", "minimal-ui"],
   "display": "standalone",
