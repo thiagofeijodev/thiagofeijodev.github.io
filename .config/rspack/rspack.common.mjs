@@ -48,6 +48,7 @@ export default {
   output: {
     filename: 'static/[name].[contenthash].js',
     publicPath: '/',
+    clean: true
   },
   plugins: [
     new rspack.ProgressPlugin({

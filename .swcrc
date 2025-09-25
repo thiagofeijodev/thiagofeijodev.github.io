@@ -15,5 +15,5 @@
   "module": {
     "type": "es6"
   },
-  "sourceMaps": true
+  "sourceMaps": false
 }

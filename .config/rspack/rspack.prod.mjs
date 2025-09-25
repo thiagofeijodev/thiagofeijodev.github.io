@@ -11,7 +11,7 @@ export default () => {
   const config = {
     ...common,
     mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
-    devtool: 'inline-source-map',
+    devtool: false,
     output: {
       ...common.output,
       path: path.resolve(process.cwd(), 'docs'),

@@ -45,14 +45,6 @@ export default defineConfig([{
     },
 
     settings: {
-        "import/resolver": {
-            node: {
-                paths: ["src"],
-            },
-
-            "babel-module": {},
-        },
-
         react: {
             version: "detect",
         },
