@@ -13,7 +13,7 @@ export default {
       },
       {
         test: /\.(js|jsx)$/,
-        use: 'babel-loader',
+        use: 'swc-loader',
         exclude: /node_modules/,
         resolve: {
           fullySpecified: false

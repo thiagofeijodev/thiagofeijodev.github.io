@@ -1,5 +1,5 @@
-import GithubIcon from './assets/icon/github.svg'
-import LinkedinIcon from './assets/icon/linkedin.svg'
+import SVGGithub from './assets/icon/SVGGithub'
+import SVGLinkdin from './assets/icon/SVGLinkdin'
 import * as styles from './styles.css'
 
 const App = () => (
@@ -10,12 +10,12 @@ const App = () => (
     <ul className={styles?.ul}>
       <li className={styles?.li}>
         <a href="https://github.com/thiagofeijodev/" target="_blank" aria-label="Github" rel="noreferrer">
-          <GithubIcon alt="Github link" />
+          <SVGGithub alt="Github link" />
         </a>
       </li>
       <li className={styles?.li}>
         <a href="https://www.linkedin.com/in/thiagofeijodev/" target="_blank" aria-label="LinkedIn" rel="noreferrer">
-          <LinkedinIcon alt="Linkedin link" />
+          <SVGLinkdin alt="Linkedin link" />
         </a>
       </li>
     </ul>
