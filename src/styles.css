@@ -44,9 +44,13 @@ body {
   display: inline-block;
   position: relative;
   margin: 0px 10px;
+}
+
+.li svg {
+  color: white;
+  fill: white;
   width: 24px;
   height: 24px;
-  fill: white;
 }
 
 .aIconLink {
