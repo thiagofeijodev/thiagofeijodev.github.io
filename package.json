@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "homepage": "./",
+  "engines": {
+    "npm": "11.6.0",
+    "node": "24.9.0"
+  },
   "scripts": {
     "start": "rspack serve --mode development --config .config/rspack/rspack.dev.mjs",
     "build": "NODE_ENV=production && rspack --mode production --config .config/rspack/rspack.prod.mjs",
@@ -10,10 +14,6 @@
     "lint": "eslint --ext js,jsx 'src/**/**.js' --max-warnings 0",
     "test": "jest --maxConcurrency=2 --maxWorkers=2",
     "prepare": "husky"
-  },
-  "engines": {
-    "npm": "11.6.0",
-    "node": "24.9.0"
   },
   "dependencies": {
     "react": "19.1.1",
