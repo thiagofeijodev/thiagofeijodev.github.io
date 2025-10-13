@@ -4,12 +4,12 @@
   "private": true,
   "homepage": "./",
   "engines": {
-    "npm": "11.6.0",
-    "node": "24.9.0"
+    "npm": "10.7.0",
+    "node": "20.14.0"
   },
   "scripts": {
     "start": "rspack serve --mode development --config .config/rspack/rspack.dev.mjs",
-    "build": "npx rspack --mode production --config .config/rspack/rspack.prod.mjs",
+    "build": "rspack --mode production --config .config/rspack/rspack.prod.mjs",
     "analyzer": "rspack build --analyze  --mode development --config .config/rspack/rspack.prod.mjs",
     "lint": "eslint --ext js,jsx 'src/**/**.js' --max-warnings 0",
     "test": "jest --maxConcurrency=2 --maxWorkers=2",
