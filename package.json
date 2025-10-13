@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "rspack serve --mode development --config .config/rspack/rspack.dev.mjs",
-    "build": "rspack --mode production --config .config/rspack/rspack.prod.mjs",
+    "build": "npx rspack --mode production --config .config/rspack/rspack.prod.mjs",
     "analyzer": "rspack build --analyze  --mode development --config .config/rspack/rspack.prod.mjs",
     "lint": "eslint --ext js,jsx 'src/**/**.js' --max-warnings 0",
     "test": "jest --maxConcurrency=2 --maxWorkers=2",
