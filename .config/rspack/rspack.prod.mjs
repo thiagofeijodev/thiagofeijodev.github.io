@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import path from 'path';
+import rspack from '@rspack/core';
 import { WebpackAssetsManifest } from 'webpack-assets-manifest';
 import WorkboxPlugin from 'workbox-webpack-plugin';
 import FaviconsRspackPlugin from 'favicons-rspack-plugin';
@@ -24,6 +25,7 @@ export default () => {
         filename: path.join(process.cwd(), 'docs/index.html'),
         inject: 'body',
       }),
+      new rspack.EnvironmentPlugin(['REACT_APP_GA_ID']),
       new FaviconsRspackPlugin({
         logo: './public/logo.png',
         cache: true,
