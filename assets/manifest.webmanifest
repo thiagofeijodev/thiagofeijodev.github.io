@@ -1,11 +1,11 @@
 {
-  "name": "thiagofeijor",
-  "short_name": "thiagofeijor",
+  "name": "thiagofeijodev",
+  "short_name": "thiagofeijodev",
   "dir": "ltr",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "https://feijo.dev/",
+  "start_url": "/index.html",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
@@ -65,7 +65,7 @@
     }
   ],
   "description": "My website =]",
-  "scope": "https://feijo.dev/",
+  "scope": "/",
   "display_override": [
     "window-control-overlay",
     "minimal-ui"
