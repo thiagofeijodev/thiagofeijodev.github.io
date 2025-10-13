@@ -4,8 +4,8 @@
   "private": true,
   "homepage": "./",
   "engines": {
-    "npm": "10.7.0",
-    "node": "20.14.0"
+    "npm": "10.8.2",
+    "node": "20.19.5"
   },
   "scripts": {
     "start": "rspack serve --mode development --config .config/rspack/rspack.dev.mjs",
