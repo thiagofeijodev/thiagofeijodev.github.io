@@ -1,12 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import path from 'path';
-import rspack from '@rspack/core';
 import { WebpackAssetsManifest } from 'webpack-assets-manifest';
 import WorkboxPlugin from 'workbox-webpack-plugin';
 import FaviconsRspackPlugin from 'favicons-rspack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import common from './rspack.common.mjs';
+import rspack from '@rspack/core';
 
 export default () => {
   const config = {
@@ -15,17 +14,16 @@ export default () => {
     devtool: false,
     output: {
       ...common.output,
-      path: path.resolve(process.cwd(), 'docs'),
+      path: path.resolve(process.cwd(), 'dist'),
     },
     plugins: [
-      ...common.plugins,
+      new rspack.EnvironmentPlugin(['REACT_APP_GA_ID']),
       new HtmlWebpackPlugin({
         favicon: 'public/logo.png',
         template: path.join(process.cwd(), 'public/index.html'),
-        filename: path.join(process.cwd(), 'docs/index.html'),
+        filename: path.join(process.cwd(), 'dist/index.html'),
         inject: 'body',
       }),
-      new rspack.EnvironmentPlugin(['REACT_APP_GA_ID']),
       new FaviconsRspackPlugin({
         logo: './public/logo.png',
         cache: true,
@@ -34,10 +32,10 @@ export default () => {
         manifest: './public/manifest.json',
       }),
       new CompressionPlugin({
-        filename: "[path][base].gz",
+        filename: '[path][base].gz',
       }),
       new WebpackAssetsManifest({}),
-      new WorkboxPlugin.GenerateSW()
+      new WorkboxPlugin.GenerateSW(),
     ],
     optimization: {
       splitChunks: {
@@ -47,4 +45,4 @@ export default () => {
   };
 
   return config;
-}
+};

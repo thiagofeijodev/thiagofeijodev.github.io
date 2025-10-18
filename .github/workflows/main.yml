@@ -1,10 +1,8 @@
-name: Deploy
+name: Production Deploy
 
 on:
   push:
-    branches: ["main"]
-
-  workflow_dispatch:
+    branches: ['main']
 
 permissions:
   contents: write
@@ -12,14 +10,13 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,15 +25,24 @@ jobs:
       - name: Install 🔧
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: 'npm'
 
-      - name: Install 🔧
-        run: npm ci --ignore-scripts
+      - name: Install dependencies (including optional)
+        run: npm ci --include=optional
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: |
+          mkdir -p test-results
+          # run jest and write JSON results so we can upload them as an artifact
+          npm run test:ci
 
       - name: Build 🔧
         run: npm run build
-        env: 
+        env:
           NODE_ENV: production
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
 
@@ -44,4 +50,11 @@ jobs:
         name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: docs
+          folder: dist
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jest-results
+          path: test-results
