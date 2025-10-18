@@ -74,14 +74,14 @@
   "index.html": "index.html",
   "index.html.gz": "index.html.gz",
   "logo.png": "logo.png",
-  "main.css": "static/main.68e8b2bddabc30be.css",
-  "main.js": "static/main.2ef55bdb4a02231e.js",
+  "main.css": "static/main.eaac6844e63267c7.css",
+  "main.js": "static/main.64db6e92bcd2c7c1.js",
   "service-worker.js": "service-worker.js",
   "service-worker.js.gz": "service-worker.js.gz",
   "static/322.2051d5b61c3be902.js": "static/322.2051d5b61c3be902.js",
   "static/322.2051d5b61c3be902.js.gz": "static/322.2051d5b61c3be902.js.gz",
-  "static/main.2ef55bdb4a02231e.js.gz": "static/main.2ef55bdb4a02231e.js.gz",
-  "static/main.68e8b2bddabc30be.css.gz": "static/main.68e8b2bddabc30be.css.gz",
+  "static/main.64db6e92bcd2c7c1.js.gz": "static/main.64db6e92bcd2c7c1.js.gz",
+  "static/main.eaac6844e63267c7.css.gz": "static/main.eaac6844e63267c7.css.gz",
   "workbox-915e8d08.js": "workbox-915e8d08.js",
   "workbox-915e8d08.js.gz": "workbox-915e8d08.js.gz"
 }
