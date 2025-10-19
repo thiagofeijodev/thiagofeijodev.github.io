@@ -10,7 +10,7 @@
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "categories": ["business", "government", "productivity", "utilities"],
-  "shortcuts" : [
+  "shortcuts": [
     {
       "name": "Home",
       "url": "/"

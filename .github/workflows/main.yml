@@ -9,7 +9,6 @@ permissions:
 
 jobs:
   build:
-    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,10 +27,7 @@ jobs:
         run: npm run lint
 
       - name: Test
-        run: |
-          mkdir -p test-results
-          # run jest and write JSON results so we can upload them as an artifact
-          npm run test:ci
+        run: npm run test
 
       - name: Build 🔧
         run: npm run build
