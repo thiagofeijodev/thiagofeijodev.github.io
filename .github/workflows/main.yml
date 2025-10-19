@@ -2,21 +2,19 @@ name: Production Deploy
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,7 +24,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies (including optional)
         run: npm ci --include=optional
@@ -46,11 +44,10 @@ jobs:
           NODE_ENV: production
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
 
-      - id: deployment
-        name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: dist
+          path: ./dist
 
       - name: Upload test results
         if: always()
@@ -58,3 +55,15 @@ jobs:
         with:
           name: jest-results
           path: test-results
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
