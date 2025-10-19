@@ -39,14 +39,10 @@ jobs:
           NODE_ENV: production
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          folder: docs
-
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: jest-results
-          path: test-results
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          commit_message: "chore: deploy to gh-pages 🚀"
