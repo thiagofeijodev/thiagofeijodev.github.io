@@ -5,16 +5,11 @@ on:
     branches: ["main"]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
   build:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,10 +39,10 @@ jobs:
           NODE_ENV: production
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: ./dist
+          folder: ./dist
 
       - name: Upload test results
         if: always()
