@@ -14,14 +14,14 @@ export default () => {
     devtool: false,
     output: {
       ...common.output,
-      path: path.resolve(process.cwd(), "dist"),
+      path: path.resolve(process.cwd(), "docs"),
     },
     plugins: [
       new rspack.EnvironmentPlugin(["REACT_APP_GA_ID"]),
       new HtmlWebpackPlugin({
         favicon: "public/logo.png",
         template: path.join(process.cwd(), "public/index.html"),
-        filename: path.join(process.cwd(), "dist/index.html"),
+        filename: path.join(process.cwd(), "docs/index.html"),
         inject: "body",
       }),
       new FaviconsRspackPlugin({
