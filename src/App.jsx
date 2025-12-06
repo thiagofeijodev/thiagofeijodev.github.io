@@ -37,10 +37,20 @@ const App = () => (
     <div className={styles?.projectsContainer}>
       <h3 className={styles?.projectsTitle}>Projects</h3>
       <div className={styles?.projectList}>
-        <a href="/pdf-password-remover/" className={styles?.projectCard}>
+        <a
+          href="/pdf-password-remover/"
+          className={styles?.projectCard}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <h4 className={styles?.projectCardTitle}>PDF Password Remover</h4>
         </a>
-        <a href="/countdown/" className={styles?.projectCard}>
+        <a
+          href="/countdown/"
+          className={styles?.projectCard}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <h4 className={styles?.projectCardTitle}>Countdown Timer</h4>
         </a>
       </div>
