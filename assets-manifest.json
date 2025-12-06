@@ -74,14 +74,12 @@
   "index.html": "index.html",
   "index.html.gz": "index.html.gz",
   "logo.png": "logo.png",
-  "main.css": "static/main.eaac6844e63267c7.css",
-  "main.js": "static/main.93d07f9564b89c70.js",
+  "main.js": "static/main.232aadb56357a040.js",
   "service-worker.js": "service-worker.js",
   "service-worker.js.gz": "service-worker.js.gz",
-  "static/322.2051d5b61c3be902.js": "static/322.2051d5b61c3be902.js",
-  "static/322.2051d5b61c3be902.js.gz": "static/322.2051d5b61c3be902.js.gz",
-  "static/main.93d07f9564b89c70.js.gz": "static/main.93d07f9564b89c70.js.gz",
-  "static/main.eaac6844e63267c7.css.gz": "static/main.eaac6844e63267c7.css.gz",
-  "workbox-915e8d08.js": "workbox-915e8d08.js",
-  "workbox-915e8d08.js.gz": "workbox-915e8d08.js.gz"
+  "static/72.ce3f9f1b2dd0a234.js": "static/72.ce3f9f1b2dd0a234.js",
+  "static/72.ce3f9f1b2dd0a234.js.gz": "static/72.ce3f9f1b2dd0a234.js.gz",
+  "static/main.232aadb56357a040.js.gz": "static/main.232aadb56357a040.js.gz",
+  "workbox-aa2f3006.js": "workbox-aa2f3006.js",
+  "workbox-aa2f3006.js.gz": "workbox-aa2f3006.js.gz"
 }
