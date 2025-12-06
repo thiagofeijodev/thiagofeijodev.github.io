@@ -38,4 +38,14 @@ describe("App Component", () => {
     expect(linkedinLink).toHaveAttribute("target", "_blank");
     expect(linkedinLink).toHaveAttribute("rel", "noreferrer");
   });
+
+  test("renders projects section with correct links", () => {
+    expect(screen.getByText("Projects")).toBeInTheDocument();
+
+    const pdfLink = screen.getByText("PDF Password Remover").closest("a");
+    const countdownLink = screen.getByText("Countdown Timer").closest("a");
+
+    expect(pdfLink).toHaveAttribute("href", "/pdf-password-remover/");
+    expect(countdownLink).toHaveAttribute("href", "/countdown/");
+  });
 });

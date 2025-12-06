@@ -1,6 +1,6 @@
 import SVGGithub from "./assets/icon/SVGGithub";
 import SVGLinkdin from "./assets/icon/SVGLinkdin";
-import * as styles from "./App.module.css";
+import styles from "./App.module.css";
 
 const App = () => (
   <div className={styles?.content}>
@@ -33,6 +33,18 @@ const App = () => (
         </a>
       </li>
     </ul>
+
+    <div className={styles?.projectsContainer}>
+      <h3 className={styles?.projectsTitle}>Projects</h3>
+      <div className={styles?.projectList}>
+        <a href="/pdf-password-remover/" className={styles?.projectCard}>
+          <h4 className={styles?.projectCardTitle}>PDF Password Remover</h4>
+        </a>
+        <a href="/countdown/" className={styles?.projectCard}>
+          <h4 className={styles?.projectCardTitle}>Countdown Timer</h4>
+        </a>
+      </div>
+    </div>
   </div>
 );
 

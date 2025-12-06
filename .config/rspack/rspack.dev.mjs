@@ -15,6 +15,9 @@ const rspackConfig = {
     filename: "static/main.js",
   },
   plugins: [
+    new rspack.DefinePlugin({
+      'process.env.REACT_APP_GA_ID': JSON.stringify(process.env.REACT_APP_GA_ID),
+    }),
     new ReactRefreshPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(process.cwd(), "public/index.html"),

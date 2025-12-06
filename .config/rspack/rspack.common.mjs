@@ -51,6 +51,22 @@ export default {
         },
       },
       {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                namedExport: false,
+                auto: true,
+              },
+            },
+          },
+          "postcss-loader",
+        ],
+      },
+      {
         test: /\.(png|jp(e*)g|gif)$/,
         use: [
           {
@@ -62,8 +78,5 @@ export default {
         ],
       },
     ],
-  },
-  experiments: {
-    css: true,
   },
 };
