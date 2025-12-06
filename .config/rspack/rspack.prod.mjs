@@ -18,6 +18,13 @@ export default () => {
     },
     plugins: [
       new rspack.EnvironmentPlugin(["REACT_APP_GA_ID"]),
+      new rspack.CopyRspackPlugin({
+        patterns: [
+          {
+            from: "public/CNAME",
+          },
+        ],
+      }),
       new HtmlWebpackPlugin({
         favicon: "public/logo.png",
         template: path.join(process.cwd(), "public/index.html"),
