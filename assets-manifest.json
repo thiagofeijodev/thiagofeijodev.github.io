@@ -74,12 +74,12 @@
   "index.html": "index.html",
   "index.html.gz": "index.html.gz",
   "logo.png": "logo.png",
-  "main.js": "static/main.232aadb56357a040.js",
+  "main.js": "static/main.0375c50e418e36e3.js",
   "service-worker.js": "service-worker.js",
   "service-worker.js.gz": "service-worker.js.gz",
   "static/72.ce3f9f1b2dd0a234.js": "static/72.ce3f9f1b2dd0a234.js",
   "static/72.ce3f9f1b2dd0a234.js.gz": "static/72.ce3f9f1b2dd0a234.js.gz",
-  "static/main.232aadb56357a040.js.gz": "static/main.232aadb56357a040.js.gz",
+  "static/main.0375c50e418e36e3.js.gz": "static/main.0375c50e418e36e3.js.gz",
   "workbox-aa2f3006.js": "workbox-aa2f3006.js",
   "workbox-aa2f3006.js.gz": "workbox-aa2f3006.js.gz"
 }
