@@ -11,6 +11,11 @@ const App = () => (
     />
     <h1 className={styles?.name}>Thiago Feijó</h1>
     <h2 className={styles?.role}>Software Developer</h2>
+    <p className={styles?.bio}>
+      React specialist building high-performance, scalable applications.
+      Passionate about modern JavaScript, developer experience, and full-stack
+      development. OpenJS Node.js certified.
+    </p>
     <ul className={styles?.ul}>
       <li className={styles?.li}>
         <a
