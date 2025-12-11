@@ -1,7 +1,7 @@
 {
   "short_name": "thiagofeijodev",
   "name": "thiagofeijodev",
-  "description": "My website =]",
+  "description": "React Developer specializing in high-performance, scalable applications. Expert in modern JavaScript, Node.js, and full-stack development. OpenJS certified.",
   "start_url": "/index.html",
   "scope": "/",
   "dir": "ltr",
@@ -9,11 +9,19 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#000000",
-  "categories": ["business", "government", "productivity", "utilities"],
+  "categories": ["business", "productivity", "utilities"],
   "shortcuts": [
     {
-      "name": "Home",
+      "name": "Home Page",
       "url": "/"
+    },
+    {
+      "name": "Countdown Timer",
+      "url": "/countdown"
+    },
+    {
+      "name": "Countdown Timer",
+      "url": "/pdf-password-remover"
     }
   ]
 }
