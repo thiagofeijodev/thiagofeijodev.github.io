@@ -64,7 +64,7 @@
       "purpose": "any"
     }
   ],
-  "description": "My website =]",
+  "description": "React Developer specializing in high-performance, scalable applications. Expert in modern JavaScript, Node.js, and full-stack development. OpenJS certified.",
   "scope": "/",
   "display_override": [
     "window-control-overlay",
@@ -72,14 +72,21 @@
   ],
   "categories": [
     "business",
-    "government",
     "productivity",
     "utilities"
   ],
   "shortcuts": [
     {
-      "name": "Home",
+      "name": "Home Page",
       "url": "/"
+    },
+    {
+      "name": "Countdown Timer",
+      "url": "/countdown"
+    },
+    {
+      "name": "Countdown Timer",
+      "url": "/pdf-password-remover"
     }
   ]
 }
