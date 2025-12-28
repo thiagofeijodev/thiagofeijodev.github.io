@@ -43,7 +43,7 @@ const App = () => (
       <h3 className={styles?.projectsTitle}>Projects</h3>
       <div className={styles?.projectList}>
         <a
-          href="/pdf-password-remover/"
+          href="https://pdf-password-remover.feijo.dev/"
           className={styles?.projectCard}
           target="_blank"
           rel="noopener noreferrer"
@@ -51,7 +51,7 @@ const App = () => (
           <h4 className={styles?.projectCardTitle}>PDF Password Remover</h4>
         </a>
         <a
-          href="/countdown/"
+          href="https://countdown.feijo.dev/"
           className={styles?.projectCard}
           target="_blank"
           rel="noopener noreferrer"
