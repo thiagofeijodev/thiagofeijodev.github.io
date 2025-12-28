@@ -45,7 +45,13 @@ describe("App Component", () => {
     const pdfLink = screen.getByText("PDF Password Remover").closest("a");
     const countdownLink = screen.getByText("Countdown Timer").closest("a");
 
-    expect(pdfLink).toHaveAttribute("href", "/pdf-password-remover/");
-    expect(countdownLink).toHaveAttribute("href", "/countdown/");
+    expect(pdfLink).toHaveAttribute(
+      "href",
+      "https://pdf-password-remover.feijo.dev/",
+    );
+    expect(countdownLink).toHaveAttribute(
+      "href",
+      "https://countdown.feijo.dev/",
+    );
   });
 });
