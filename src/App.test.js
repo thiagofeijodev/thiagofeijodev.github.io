@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import App from "./App";
 
+jest.mock("./hooks/useSnapScroll", () => () => ({ showBelow: true }));
+
 describe("App Component", () => {
   beforeEach(() => {
     render(
@@ -44,8 +46,16 @@ describe("App Component", () => {
     expect(linkedinLink).toHaveAttribute("rel", "noreferrer");
   });
 
-  test("renders projects section with correct links", () => {
-    expect(screen.getByText("Projects")).toBeInTheDocument();
+  test("renders download CV link", () => {
+    const link = screen.getByText("Download CV").closest("a");
+    expect(link).toHaveAttribute("href", "/cv.pdf");
+    expect(link).toHaveAttribute("download");
+  });
+
+  test("renders projects section with correct links", async () => {
+    expect(
+      await screen.findByRole("heading", { name: "Projects" }),
+    ).toBeInTheDocument();
 
     const pdfLink = screen.getByText("PDF Password Remover").closest("a");
     const countdownLink = screen.getByText("Countdown Timer").closest("a");
