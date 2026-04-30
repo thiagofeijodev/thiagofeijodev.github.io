@@ -12,16 +12,24 @@
   "categories": ["business", "productivity", "utilities"],
   "shortcuts": [
     {
-      "name": "Home Page",
-      "url": "/"
+      "name": "Experience",
+      "url": "/#experience"
     },
     {
-      "name": "Countdown Timer",
-      "url": "/countdown"
+      "name": "Education",
+      "url": "/#education"
     },
     {
-      "name": "Countdown Timer",
-      "url": "/pdf-password-remover"
+      "name": "Certifications",
+      "url": "/#certifications"
+    },
+    {
+      "name": "Projects",
+      "url": "/#projects"
+    },
+    {
+      "name": "Skills",
+      "url": "/#skills"
     }
   ]
 }

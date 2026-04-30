@@ -77,6 +77,21 @@ const config = [
     },
   },
 
+  // Scripts (scraper, etc.)
+  {
+    files: ["scripts/**/*.mjs"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        // page.evaluate() callbacks run in browser context
+        ...globals.browser,
+      },
+    },
+    rules: {
+      "no-console": "off",
+    },
+  },
+
   // Ignore patterns
   {
     ignores: [

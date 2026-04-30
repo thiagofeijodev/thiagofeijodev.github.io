@@ -1,9 +1,14 @@
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import App from "./App";
 
 describe("App Component", () => {
   beforeEach(() => {
-    render(<App />);
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>,
+    );
   });
 
   test("renders main heading and role", () => {

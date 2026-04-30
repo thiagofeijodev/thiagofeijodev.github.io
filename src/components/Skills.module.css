@@ -1,0 +1,30 @@
+.section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.heading {
+  font-size: 1.8rem;
+  color: #dadada;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #dadada;
+  font-size: 0.9rem;
+  font-family: "Lato", sans-serif;
+}
