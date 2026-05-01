@@ -11,6 +11,41 @@
   text-align: center;
 }
 
+.search {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 1.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  color: #dadada;
+  font-size: 0.9rem;
+  font-family: "Lato", sans-serif;
+  backdrop-filter: blur(10px);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.search::placeholder {
+  color: rgba(176, 176, 176, 0.5);
+}
+
+.search:focus {
+  border-color: rgba(100, 180, 200, 0.6);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.empty {
+  color: rgba(176, 176, 176, 0.5);
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0.5rem 0 0;
+}
+
 .tagList {
   display: flex;
   flex-wrap: wrap;
