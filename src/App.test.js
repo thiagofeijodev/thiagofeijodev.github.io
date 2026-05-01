@@ -57,8 +57,10 @@ describe("App Component", () => {
       await screen.findByRole("heading", { name: "Projects" }),
     ).toBeInTheDocument();
 
-    const pdfLink = screen.getByText("PDF Password Remover").closest("a");
-    const countdownLink = screen.getByText("Countdown Timer").closest("a");
+    const pdfLink = screen.getAllByText("PDF Password Remover")[0].closest("a");
+    const countdownLink = screen
+      .getAllByText("Countdown Timer")[0]
+      .closest("a");
 
     expect(pdfLink).toHaveAttribute(
       "href",
