@@ -23,7 +23,8 @@ describe("Projects", () => {
   test("renders project names as external links", () => {
     render(<Projects projects={mockProjects} />);
 
-    const pdfLink = screen.getByText("PDF Password Remover").closest("a");
+    // Items are doubled for the carousel; check the first (real) link
+    const pdfLink = screen.getAllByText("PDF Password Remover")[0].closest("a");
     expect(pdfLink).toHaveAttribute(
       "href",
       "https://pdf-password-remover.feijo.dev/",
@@ -31,7 +32,9 @@ describe("Projects", () => {
     expect(pdfLink).toHaveAttribute("target", "_blank");
     expect(pdfLink).toHaveAttribute("rel", "noopener noreferrer");
 
-    const countdownLink = screen.getByText("Countdown Timer").closest("a");
+    const countdownLink = screen
+      .getAllByText("Countdown Timer")[0]
+      .closest("a");
     expect(countdownLink).toHaveAttribute(
       "href",
       "https://countdown.feijo.dev/",
@@ -44,6 +47,24 @@ describe("Projects", () => {
       { name: "My Blog", url: "https://blog.example.com/" },
     ];
     render(<Projects projects={projects} />);
-    expect(screen.getByText("My Blog")).toBeInTheDocument();
+    expect(screen.getAllByText("My Blog")[0]).toBeInTheDocument();
+  });
+
+  test("renders description when provided", () => {
+    const projects = [
+      {
+        name: "My App",
+        url: "https://example.com/",
+        description: "A cool app.",
+      },
+    ];
+    render(<Projects projects={projects} />);
+    expect(screen.getAllByText("A cool app.")[0]).toBeInTheDocument();
+  });
+
+  test("duplicate group is aria-hidden for accessibility", () => {
+    const { container } = render(<Projects projects={mockProjects} />);
+    const groups = container.querySelectorAll("[aria-hidden='true']");
+    expect(groups.length).toBeGreaterThanOrEqual(1);
   });
 });

@@ -172,11 +172,18 @@
   "projects": [
     {
       "name": "PDF Password Remover",
-      "url": "https://pdf-password-remover.feijo.dev/"
+      "url": "https://pdf-password-remover.feijo.dev/",
+      "description": "Remove password protection from your own PDFs entirely in the browser — no uploads, no server, nothing ever leaves your device. Powered by a Rust-compiled WebAssembly binary for fast, native-speed processing."
     },
     {
       "name": "Countdown Timer",
-      "url": "https://countdown.feijo.dev/"
+      "url": "https://countdown.feijo.dev/",
+      "description": "A minimal, shareable countdown timer for deadlines, events, and launches. Just set a date and share the link."
+    },
+    {
+      "name": "fluentory",
+      "url": "https://fluentory.feijo.dev",
+      "description": "An AI-powered web app for English learners to practice vocabulary."
     }
   ],
   "education": [
