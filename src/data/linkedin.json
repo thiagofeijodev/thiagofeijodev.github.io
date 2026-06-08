@@ -1,0 +1,319 @@
+{
+  "updatedAt": "2026-04-30",
+  "experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "Kneat Solutions",
+      "startDate": "Jan 2026",
+      "endDate": "Present",
+      "description": "Led the migration from Webpack to Rspack, significantly improving build speed, developer feedback loops, and long-term maintainability of the frontend tooling.  Continued to drive and execute complex library upgrades, including critical updates such as React Router, ensuring compatibility and reducing technical debt across the codebase.  Designed and implemented automated test coverage using Playwright, including end-to-end testing for the icon font library to guarantee visual consistency.  Built upon a strong background in .NET and C# while remaining primarily frontend-focused, contributing where needed across Node.js and platform-level concerns."
+    },
+    {
+      "title": "Software Developer",
+      "company": "Kneat Solutions",
+      "startDate": "Jan 2024",
+      "endDate": "Dec 2025",
+      "description": "Led multiple library upgrade efforts, including critical updates like React Router, ensuring compatibility and long-term maintainability across the codebase.  Configured Webpack’s HTTP proxy to support dynamic backend connections in the development environment, enabling seamless integration with different backend instances. This significantly improved development speed and overall developer experience.  Proactively documented system architecture, tooling, and development workflows to enhance team onboarding and reduce knowledge silos.  Invested substantial time in maintaining and modernizing the build pipeline, including updating Babel configurations and ensuring comprehensive polyfill support to guarantee cross-browser compatibility."
+    },
+    {
+      "title": "Associate Software Developer",
+      "company": "Kneat Solutions",
+      "startDate": "Nov 2022",
+      "endDate": "Dec 2023",
+      "description": "Successfully led the deprecation of a out-of-date Dot Net application, architecting and building a brand new Node.js application to efficiently provide static files, resulting in enhanced system performance and user experience.  Implemented gzip optimization techniques, significantly reducing file sizes and improving overall application speed.  Spearheaded improvements in build time and resolved issues in the Webpack configuration, resulting in a more streamlined development process.  Innovatively enhanced Continuous Integration (CI) pipelines by reducing lines of code through the creation of standardized templates, leading to a more efficient and maintainable CI infrastructure.  Implemented commit message standardization across the development team, eliminating inconsistencies and enhancing codebase clarity. Automated changelog updates to remove manual processes, improving version tracking.  Developed a library from the main application, enabling the seamless reuse of components in various environments, promoting code reusability and maintainability."
+    },
+    {
+      "title": "Senior Frontend Developer",
+      "company": "Hotmart",
+      "startDate": "Nov 2021",
+      "endDate": "Oct 2022",
+      "description": "Worked with React on a micro frontend environment setting up webpack module federation, eslint, CI in drone and other project configs."
+    },
+    {
+      "title": "Full Stack Engineer",
+      "company": "iTER Software de Rastreamento e Telemetria",
+      "startDate": "Jul 2020",
+      "endDate": "Oct 2021",
+      "description": "Delivered end-to-end features independently using a React-based frontend and a Ruby on Rails backend, reducing cross-team dependencies and accelerating delivery timelines.  Applied DevOps practices and Infrastructure as Code (IaC) principles to streamline deployment, improve environment consistency, and enhance system reliability."
+    },
+    {
+      "title": "Senior Frontend Developer",
+      "company": "iTER Software de Rastreamento e Telemetria",
+      "startDate": "Jan 2020",
+      "endDate": "Jul 2020",
+      "description": "Migrated and maintained the continuous integration (CI) pipeline, improving build reliability and reducing feedback time for developers.  Introduced and implemented a new component library following Atomic Design principles, promoting consistency, scalability, and reusability across the front-end codebase."
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "iTER Software de Rastreamento e Telemetria",
+      "startDate": "Aug 2019",
+      "endDate": "Dec 2019",
+      "description": "Automated infrastructure operations, test pipelines, and internal development workflows to boost team efficiency and reduce manual intervention.  Oversaw release versioning and deployment processes, ensuring consistent and reliable product releases.  Coordinated feature development and task prioritization to align with project goals and deadlines.  Technologies & Tools: React, Redux, Ramda, Formik, D3.js (Charts), Leaflet (Maps), i18n, Codeship, GitHub Actions, Drone CI/CD, and others."
+    },
+    {
+      "title": "Customer Support Engineer",
+      "company": "Zygo",
+      "startDate": "Nov 2018",
+      "endDate": "Jun 2019",
+      "description": "Worked across the full stack of a web application using Ruby on Rails, Node.js, and React/Redux. Played a key role in supporting external and internal clients, maintaining system reliability while contributing to feature development and automation efforts.  Key Responsibilities: - Gathered and analyzed requirements from internal teams to develop and enhance features; - Wrote unit tests to ensure code quality and system stability; - Maintained application uptime and performance across all systems; - Automated recurring tasks related to infrastructure, testing, and internal processes; - Delivered quick-turnaround hotfixes for critical issues;  Achievement: - Awarded Employee of the Quarter — became the shortest-tenured employee ever to receive the recognition."
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Apollus EHS Solutions",
+      "startDate": "Oct 2017",
+      "endDate": "Oct 2018",
+      "description": "At Apollus EHS Solutions, I worked on a Single Page Application (SPA) using Angular, where I led the rewrite of a legacy AngularJS system into Angular 2+. I was responsible for maintaining and upgrading the codebase up to Angular version 7, ensuring long-term maintainability and performance. As part of a broader platform redesign, I created a scalable design system and developed a reusable component library in Angular 2+. I also implemented comprehensive testing using Jasmine, Karma, and Protractor to support both unit and end-to-end coverage. In parallel, I maintained the legacy AngularJS application, delivering hotfixes and patches to ensure continued stability during the transition."
+    },
+    {
+      "title": "Full-stack Developer",
+      "company": "Freelancer",
+      "startDate": "Jan 2016",
+      "endDate": "Mar 2018",
+      "description": "Worked mainly with mobile applications. Create backend with PHP, MySQL/NodeJS, MongoDB using Heroku and AWS as server. Create web pages and mobile apps with Cordova/Phonegap, AngularJS/Angular+2 and Ionic."
+    },
+    {
+      "title": "Junior Application Developer",
+      "company": "WR2 Desenvolvimento de Sistemas e Web Sites",
+      "startDate": "Jul 2014",
+      "endDate": "Dec 2015",
+      "description": "Develop and maintain ERP modules using Delphi (Object Pascal), focusing on business areas like finance, inventory, sales, HR, or logistics.  Fix bugs and resolve issues reported by users or QA teams, ensuring timely and stable updates.  Assist in code reviews and refactoring tasks, improving code quality under the guidance of senior developers.  Participate in requirement analysis and implementation, translating business needs into functional code. Write and maintain SQL queries to interact with the underlying relational databases (e.g., Firebird, MySql).  Document code and development procedures, helping build a maintainable and understandable codebase.  Support legacy systems while contributing to modernization efforts and gradual improvements.  Test developed features to ensure functionality and performance align with business expectations.  Collaborate with cross-functional teams, including QA, support, and business analysts, to deliver complete ERP solutions.  Learn and apply ERP-specific business logic, gaining a deeper understanding of how various modules interact within the system."
+    },
+    {
+      "title": "Junior Customer Support",
+      "company": "WR2 Desenvolvimento de Sistemas e Web Sites",
+      "startDate": "Jan 2014",
+      "endDate": "Jun 2014",
+      "description": "Develop and maintain customer support modules such as ticketing, SLA tracking, live chat, knowledge base, and customer communication logs.  Integrate ERP functionalities (e.g., CRM, billing, inventory) with support systems to provide a unified customer view.  Customize workflows and automation for ticket escalation, resolution tracking, and customer satisfaction follow-up.  Collaborate with customer service teams to gather requirements and translate them into technical solutions that enhance support efficiency.  Ensure role-based access control and data privacy across customer records and communication logs.  Monitor system performance and troubleshoot issues related to support operations.  Maintain integrations with third-party tools such as email clients, messaging platforms, or telephony systems.  Write and maintain documentation for support workflows, system configurations, and troubleshooting guides.  Support testing and QA processes to ensure reliability and usability of new features and fixes."
+    },
+    {
+      "title": "Electronics Technician Apprentice",
+      "company": "Doctor games",
+      "startDate": "Jan 2011",
+      "endDate": "Oct 2013",
+      "description": "As an Electronic Technician, I was responsible for maintaining and repairing electronic devices, specializing in video game consoles. My duties included performing routine electronics maintenance, updating and troubleshooting PSP software, reinstalling firmware on various gaming systems, and installing chip matrices in PS2 consoles. This role required a strong attention to detail, technical problem-solving skills, and hands-on experience with both hardware and software components to ensure optimal device performance and customer satisfaction."
+    },
+    {
+      "title": "Receptionist",
+      "company": "Doctor Games",
+      "startDate": "Dec 2009",
+      "endDate": "Dec 2010",
+      "description": "My journey in tech started early — at just 14 years old, I worked at a local video game maintenance shop. I was responsible for creating entry and exit forms, performing general store cleaning, and assisting with console maintenance, firmware reinstallation, and basic repairs. That experience sparked my curiosity for how things work, especially when it came to electronics and software. It was my first step into the world of technology, and it shaped the mindset I carry today: hands-on, curious, and always ready to learn."
+    }
+  ],
+  "skills": [
+    "Playwriting",
+    "Rspack",
+    "AI",
+    "Rust (Programming Language)",
+    "React.js",
+    "JavaScript",
+    "Software Engineering Practices",
+    "Requirements Engineering",
+    "Process Engineering",
+    "Test Planning",
+    "Test Management",
+    "System Testing",
+    "Engineering",
+    "Test Automation",
+    "Systems Engineering",
+    "Shell Scripting",
+    "esbuild",
+    "Linux",
+    "TypeScript",
+    "Webpack",
+    "ESLint",
+    "Ruby on Rails",
+    "Node.js",
+    "GitHub",
+    "Storybooks",
+    "styled-components",
+    "codeship",
+    "drone.io",
+    "PostgreSQL",
+    "PHP",
+    "Soldering",
+    "Firmware",
+    "Electronics",
+    "Embedded Software",
+    "Adobe Flash",
+    "Microsoft Office",
+    "HTML 4",
+    "Microsoft Azure",
+    "Git",
+    "Node.JS",
+    "Docker",
+    "Amazon Web Services",
+    "MySQL",
+    "NoSQL",
+    "MongoDB",
+    "Flutter",
+    "Nginx",
+    "DigitalOcean",
+    "JQuery",
+    "CSS",
+    "Bootstrap",
+    "Python (Programming Language)",
+    "Java",
+    "HTML5",
+    "Ionic Framework",
+    "OpenCV",
+    "CMake",
+    "Dart",
+    "Go Lang",
+    "Kubernetes",
+    "GCloud",
+    "Heroku",
+    "Go (Programming Language)",
+    "Express.js",
+    "C#",
+    ".NET Framework"
+  ],
+  "posts": [],
+  "projects": [
+    {
+      "name": "PDF Password Remover",
+      "url": "https://pdf-password-remover.feijo.dev/",
+      "description": "Remove password protection from your own PDFs entirely in the browser — no uploads, no server, nothing ever leaves your device. Powered by a Rust-compiled WebAssembly binary for fast, native-speed processing."
+    },
+    {
+      "name": "Countdown Timer",
+      "url": "https://countdown.feijo.dev/",
+      "description": "A minimal, shareable countdown timer for deadlines, events, and launches. Just set a date and share the link."
+    },
+    {
+      "name": "fluentory",
+      "url": "https://fluentory.feijo.dev",
+      "description": "An AI-powered web app for English learners to practice vocabulary."
+    }
+  ],
+  "education": [
+    {
+      "school": "Federal University of Technology - Parana",
+      "degree": "Master of Business Administration - MBA",
+      "startDate": "Jan 2025",
+      "endDate": "Jul 2026",
+      "notes": ""
+    },
+    {
+      "school": "Universidade Cruzeiro do Sul",
+      "degree": "Higher National Diploma",
+      "startDate": "Jan 2020",
+      "endDate": "Dec 2021",
+      "notes": ""
+    },
+    {
+      "school": "SENAI/SC - Serviço Nacional de Aprendizagem Industrial",
+      "degree": "",
+      "startDate": "2010",
+      "endDate": "2010",
+      "notes": ""
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Go (Golang): Exploring the Language of Google",
+      "authority": "Udemy",
+      "url": "https://ude.my/UC-FZDYM5OY",
+      "licenseNumber": "UC-FZDYM5OY",
+      "startDate": "Jan 2020",
+      "endDate": "Present"
+    },
+    {
+      "name": "DevOps Ninja: Docker, Kubernetes and Rancher",
+      "authority": "Udemy",
+      "url": "https://ude.my/UC-302c6f06-1e18-4c62-8fe1-87e57306ecc5",
+      "licenseNumber": "UC-302c6f06-1e18-4c62-8fe1-87e57306ecc5",
+      "startDate": "Sep 2021",
+      "endDate": "Present"
+    },
+    {
+      "name": "Android/IOS Cross-Platform Developer with React and Redux",
+      "authority": "Udemy",
+      "url": "https://ude.my/UC-ABPM6LWH",
+      "licenseNumber": "UC-ABPM6LWH",
+      "startDate": "Jan 2020",
+      "endDate": "Present"
+    },
+    {
+      "name": "JavaScript from Basic to Advanced (with Node.js and projects)",
+      "authority": "Udemy",
+      "url": "https://www.udemy.com/certificate/UC-b4c2e9fd-9bb2-47cb-9a74-3e46be2c4718/",
+      "licenseNumber": "UC-b4c2e9fd-9bb2-47cb-9a74-3e46be2c4718",
+      "startDate": "Mar 2020",
+      "endDate": "Present"
+    },
+    {
+      "name": "Learning Basic and Advanced Programming with C++ Language",
+      "authority": "Udemy",
+      "url": "https://www.ude.my/UC-8b70b9a7-4d6d-4c32-aa99-032c970e3ddc/",
+      "licenseNumber": "UC-8b70b9a7-4d6d-4c32-aa99-032c970e3ddc",
+      "startDate": "Oct 2021",
+      "endDate": "Present"
+    },
+    {
+      "name": "Shell Script Programming - Automating Routines on Linux",
+      "authority": "Udemy",
+      "url": "https://www.udemy.com/certificate/UC-590dddb9-05e7-4ad6-84fc-b5852875585e/",
+      "licenseNumber": "UC-590dddb9-05e7-4ad6-84fc-b5852875585e",
+      "startDate": "Oct 2021",
+      "endDate": "Present"
+    },
+    {
+      "name": "100 Days of Code - The Complete Python Pro Bootcamp for 2021",
+      "authority": "Udemy",
+      "url": "https://www.udemy.com/certificate/UC-37b2d6a7-1880-4486-a8ab-6a25cc8212e4/",
+      "licenseNumber": "UC-37b2d6a7-1880-4486-a8ab-6a25cc8212e4",
+      "startDate": "Oct 2021",
+      "endDate": "Present"
+    },
+    {
+      "name": "Phonegap e Apache Cordova",
+      "authority": "loiane.training",
+      "url": "https://loiane.training/certificado/iEEYKghzV0YTWc5hhYWW",
+      "licenseNumber": "iEEYKghzV0YTWc5hhYWW",
+      "startDate": "Apr 2017",
+      "endDate": "Present"
+    },
+    {
+      "name": "React: Component Lifecycle",
+      "authority": "Alura",
+      "url": "https://cursos.alura.com.br/certificate/c2092a4c-108e-4bcc-831f-59ec2f868cf9",
+      "licenseNumber": "c2092a4c-108e-4bcc-831f-59ec2f868cf9",
+      "startDate": "Dec 2021",
+      "endDate": "Present"
+    },
+    {
+      "name": "React: Function Components, a modern approach",
+      "authority": "Alura",
+      "url": "https://cursos.alura.com.br/certificate/0fcdf6bd-1875-4f5e-8dac-496809397bd2",
+      "licenseNumber": "0fcdf6bd-1875-4f5e-8dac-496809397bd2",
+      "startDate": "Dec 2021",
+      "endDate": "Present"
+    },
+    {
+      "name": "Scrum: Agility in your project",
+      "authority": "Alura",
+      "url": "https://cursos.alura.com.br/certificate/2e388798-9421-4415-bbab-73c6cd2a33f8",
+      "licenseNumber": "2e388798-9421-4415-bbab-73c6cd2a33f8",
+      "startDate": "Dec 2021",
+      "endDate": "Present"
+    },
+    {
+      "name": "JSNAD: OpenJS Node.js Application Developer",
+      "authority": "The Linux Foundation",
+      "url": "https://www.credly.com/badges/4bbb6a43-7a22-4ebe-9e94-edfc5dfca2b0/linked_in_profile",
+      "licenseNumber": "LF-e84qzz48i2",
+      "startDate": "Jul 2025",
+      "endDate": "Jul 2027"
+    }
+  ],
+  "profile": {
+    "firstName": "Thiago",
+    "lastName": "Feijó Ramos",
+    "headline": "Senior Software Developer at Kneat Solutions",
+    "summary": "I’m a passionate React developer focused on building performant, maintainable, and scalable front-end applications. Over the years, I’ve worked extensively with React in various contexts, including micro frontends, design systems, component libraries, and CI/CD automation.  Currently at Kneat Solutions, I’ve helped modernize legacy systems, improved Webpack build performance, optimized CI pipelines, and developed internal libraries for cross-project reuse. These challenges deepened my skills not only in frontend development but also in tooling, architecture, and DevOps practices.  In addition to my frontend focus, I hold the OpenJS Node.js Application Developer certification, which reflects my solid understanding of backend development and the broader JavaScript ecosystem.  Throughout my career, I’ve worked with tools like Redux, Formik, D3, Leaflet, and various testing frameworks. I care deeply about clean code, developer experience, and building efficient, scalable solutions.  React is more than just a library for me. It’s what I truly enjoy working with and continuously exploring.",
+    "industry": "Software Development",
+    "location": "Dublin, County Dublin, Ireland",
+    "website": "feijo.dev"
+  }
+}

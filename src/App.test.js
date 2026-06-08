@@ -1,9 +1,16 @@
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import App from "./App";
+
+jest.mock("./hooks/useSnapScroll", () => () => ({ showBelow: true }));
 
 describe("App Component", () => {
   beforeEach(() => {
-    render(<App />);
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>,
+    );
   });
 
   test("renders main heading and role", () => {
@@ -39,11 +46,21 @@ describe("App Component", () => {
     expect(linkedinLink).toHaveAttribute("rel", "noreferrer");
   });
 
-  test("renders projects section with correct links", () => {
-    expect(screen.getByText("Projects")).toBeInTheDocument();
+  test("renders download CV link", () => {
+    const link = screen.getByText("Download CV").closest("a");
+    expect(link).toHaveAttribute("href", "/cv.pdf");
+    expect(link).toHaveAttribute("download");
+  });
 
-    const pdfLink = screen.getByText("PDF Password Remover").closest("a");
-    const countdownLink = screen.getByText("Countdown Timer").closest("a");
+  test("renders projects section with correct links", async () => {
+    expect(
+      await screen.findByRole("heading", { name: "Projects" }),
+    ).toBeInTheDocument();
+
+    const pdfLink = screen.getAllByText("PDF Password Remover")[0].closest("a");
+    const countdownLink = screen
+      .getAllByText("Countdown Timer")[0]
+      .closest("a");
 
     expect(pdfLink).toHaveAttribute(
       "href",

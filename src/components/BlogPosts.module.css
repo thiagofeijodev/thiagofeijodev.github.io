@@ -1,0 +1,79 @@
+.section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 6rem;
+}
+
+.heading {
+  font-size: 1.8rem;
+  color: #dadada;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.postCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.postCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.postTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #dadada;
+  margin: 0 0 0.4rem;
+}
+
+.postDate {
+  font-size: 0.85rem;
+  color: rgba(176, 176, 176, 0.7);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.postExcerpt {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.seeAllWrapper {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.seeAll {
+  color: #dadada;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(218, 218, 218, 0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.seeAll:hover {
+  border-color: #dadada;
+}

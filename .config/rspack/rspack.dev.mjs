@@ -27,7 +27,10 @@ const rspackConfig = {
   ],
   devServer: {
     port: 3001,
-    static: path.join(process.cwd(), "static"),
+    static: [
+      path.join(process.cwd(), "static"),
+      path.join(process.cwd(), "public"),
+    ],
     historyApiFallback: true,
     host: "0.0.0.0",
     open: true,

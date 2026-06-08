@@ -19,9 +19,9 @@ export default () => {
       new rspack.EnvironmentPlugin(["REACT_APP_GA_ID"]),
       new rspack.CopyRspackPlugin({
         patterns: [
-          {
-            from: "public/CNAME",
-          },
+          { from: "public/CNAME" },
+          { from: "public/404.html" },
+          { from: "public/cv.pdf" },
         ],
       }),
       new HtmlWebpackPlugin({
@@ -55,18 +55,28 @@ export default () => {
           version: "1.0",
           shortcuts: [
             {
-              name: "Home Page",
-              url: "/",
+              name: "Experience",
+              url: "/#experience",
               icon: "public/logo.png",
             },
             {
-              name: "Countdown Timer",
-              url: "/countdown",
+              name: "Education",
+              url: "/#education",
               icon: "public/logo.png",
             },
             {
-              name: "Countdown Timer",
-              url: "/pdf-password-remover",
+              name: "Certifications",
+              url: "/#certifications",
+              icon: "public/logo.png",
+            },
+            {
+              name: "Projects",
+              url: "/#projects",
+              icon: "public/logo.png",
+            },
+            {
+              name: "Skills",
+              url: "/#skills",
               icon: "public/logo.png",
             },
           ],
