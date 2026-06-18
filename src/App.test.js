@@ -2,7 +2,10 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import App from "./App";
 
-jest.mock("./hooks/useSnapScroll", () => () => ({ showBelow: true }));
+jest.mock("./hooks/useSnapScroll", () => () => ({
+  showBelow: true,
+  scrollToExperience: jest.fn(),
+}));
 
 describe("App Component", () => {
   beforeEach(() => {

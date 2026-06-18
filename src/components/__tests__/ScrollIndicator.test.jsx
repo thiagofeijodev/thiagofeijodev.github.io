@@ -10,48 +10,70 @@ describe("ScrollIndicator", () => {
       writable: true,
       configurable: true,
     });
+    Object.defineProperty(window, "innerHeight", {
+      value: 800,
+      writable: true,
+      configurable: true,
+    });
+    document.body.innerHTML = '<div id="hero" style="height:800px"></div>';
+    jest
+      .spyOn(document.getElementById("hero"), "getBoundingClientRect")
+      .mockReturnValue({
+        bottom: 800,
+        top: 0,
+        height: 800,
+      });
   });
 
   afterEach(() => {
     jest.useRealTimers();
+    document.body.innerHTML = "";
+    jest.restoreAllMocks();
   });
 
   test("renders the scroll down indicator", () => {
-    render(<ScrollIndicator />);
+    render(<ScrollIndicator onClick={jest.fn()} />);
     expect(screen.getByLabelText("Scroll down")).toBeInTheDocument();
     expect(screen.getByText("Scroll Down")).toBeInTheDocument();
   });
 
-  test("calls window.scrollTo on click", () => {
-    render(<ScrollIndicator />);
+  test("calls onClick on click", () => {
+    const onClick = jest.fn();
+    render(<ScrollIndicator onClick={onClick} />);
     fireEvent.click(screen.getByLabelText("Scroll down"));
-    expect(window.scrollTo).toHaveBeenCalledWith({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
+    expect(onClick).toHaveBeenCalled();
   });
 
-  test("hides when scrolled past 80px", () => {
-    render(<ScrollIndicator />);
-    Object.defineProperty(window, "scrollY", {
-      value: 100,
-      writable: true,
-      configurable: true,
+  test("stays visible during partial hero scroll", () => {
+    render(<ScrollIndicator onClick={jest.fn()} />);
+    document.getElementById("hero").getBoundingClientRect.mockReturnValue({
+      bottom: 600,
+      top: -200,
+      height: 800,
+    });
+    fireEvent.scroll(window);
+    expect(screen.getByLabelText("Scroll down")).toBeInTheDocument();
+  });
+
+  test("hides after scrolling past the hero", () => {
+    render(<ScrollIndicator onClick={jest.fn()} />);
+    document.getElementById("hero").getBoundingClientRect.mockReturnValue({
+      bottom: -50,
+      top: -850,
+      height: 800,
     });
     fireEvent.scroll(window);
     expect(screen.queryByLabelText("Scroll down")).not.toBeInTheDocument();
   });
 
   test("auto-scrolls after delay when autoScroll is enabled", () => {
-    render(<ScrollIndicator autoScroll />);
+    const onClick = jest.fn();
+    render(<ScrollIndicator onClick={onClick} autoScroll />);
 
     act(() => {
       jest.advanceTimersByTime(4000);
     });
 
-    expect(window.scrollTo).toHaveBeenCalledWith({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
+    expect(onClick).toHaveBeenCalled();
   });
 });

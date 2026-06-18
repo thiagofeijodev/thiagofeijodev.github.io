@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useCallback } from "react";
 import { Routes, Route } from "react-router-dom";
 import SVGGithub from "./assets/icon/SVGGithub";
 import SVGLinkdin from "./assets/icon/SVGLinkdin";
@@ -11,11 +11,15 @@ const BelowFold = lazy(() => import("./components/BelowFold"));
 const Posts = lazy(() => import("./pages/Posts"));
 
 const Home = () => {
-  const { showBelow } = useSnapScroll();
+  const { showBelow, scrollToExperience } = useSnapScroll();
+
+  const handleScrollDown = useCallback(() => {
+    scrollToExperience();
+  }, [scrollToExperience]);
 
   return (
     <div className={styles.page}>
-      <div className={styles.content}>
+      <div id="hero" className={styles.content}>
         <img
           className={styles.avatar}
           src="https://avatars.githubusercontent.com/u/17260775"
@@ -54,7 +58,7 @@ const Home = () => {
           Download CV
         </a>
 
-        <ScrollIndicator autoScroll />
+        <ScrollIndicator onClick={handleScrollDown} autoScroll />
       </div>
 
       {showBelow && (

@@ -1,37 +1,40 @@
 import { useState, useEffect } from "react";
 import styles from "./ScrollIndicator.module.css";
 
-const ScrollIndicator = ({ autoScroll = false }) => {
+const isHeroVisible = () => {
+  const hero = document.getElementById("hero");
+  if (!hero) return window.scrollY < window.innerHeight;
+  return hero.getBoundingClientRect().bottom > 0;
+};
+
+const ScrollIndicator = ({ onClick, autoScroll = false }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 80) setVisible(false);
+    const update = () => setVisible(isHeroVisible());
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
-    if (!autoScroll) return;
+    if (!autoScroll || !onClick) return;
     const id = setTimeout(() => {
-      if (window.scrollY <= 80) {
-        window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-      }
+      if (isHeroVisible()) onClick();
     }, 4000);
     return () => clearTimeout(id);
-  }, [autoScroll]);
+  }, [autoScroll, onClick]);
 
   if (!visible) return null;
-
-  const handleClick = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-  };
 
   return (
     <div
       className={styles.container}
-      onClick={handleClick}
+      onClick={onClick}
       aria-label="Scroll down"
     >
       <span className={styles.mouseBtn}>

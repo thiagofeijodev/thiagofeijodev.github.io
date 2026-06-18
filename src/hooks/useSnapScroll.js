@@ -1,4 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+
+const THRESHOLD = 50;
+
+const getExperienceTop = () => {
+  const el = document.getElementById("experience");
+  return el
+    ? el.getBoundingClientRect().top + window.scrollY
+    : window.innerHeight;
+};
+
+export const getSnapTarget = (scrollY, experienceTop, direction) => {
+  const vh = window.innerHeight;
+
+  if (scrollY <= THRESHOLD) {
+    return direction === "down" ? experienceTop : null;
+  }
+
+  if (scrollY > THRESHOLD && scrollY < vh) {
+    return direction === "down" ? experienceTop : 0;
+  }
+
+  if (Math.abs(scrollY - experienceTop) <= THRESHOLD && direction === "up") {
+    return 0;
+  }
+
+  return null;
+};
 
 const useSnapScroll = () => {
   const [showBelow, setShowBelow] = useState(false);
@@ -14,42 +41,45 @@ const useSnapScroll = () => {
     requestAnimationFrame(() => el?.scrollIntoView({ behavior: "smooth" }));
   }, [showBelow]);
 
+  const scrollToExperience = useCallback(() => {
+    window.scrollTo({ top: getExperienceTop(), behavior: "smooth" });
+  }, []);
+
   useEffect(() => {
     let isSnapping = false;
     let touchStartY = 0;
 
-    const snapToContent = () => {
+    const snapTo = (top) => {
       if (isSnapping) return;
       isSnapping = true;
-      window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+      window.scrollTo({ top, behavior: "smooth" });
       setTimeout(() => {
         isSnapping = false;
       }, 1000);
     };
 
-    const snapToHero = () => {
+    const trySnap = (direction) => {
       if (isSnapping) return;
-      isSnapping = true;
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      setTimeout(() => {
-        isSnapping = false;
-      }, 1000);
-    };
-
-    const inSnapZone = () => {
-      const y = window.scrollY;
-      const vh = window.innerHeight;
-      return y < 50 || (y > vh - 50 && y < vh + 50);
+      const target = getSnapTarget(
+        window.scrollY,
+        getExperienceTop(),
+        direction,
+      );
+      if (target != null) snapTo(target);
     };
 
     const onWheel = (e) => {
-      if (isSnapping || !inSnapZone()) return;
-      if (e.deltaY > 0 && window.scrollY < 50) {
+      if (isSnapping) return;
+      const direction = e.deltaY > 0 ? "down" : e.deltaY < 0 ? "up" : null;
+      if (!direction) return;
+      const target = getSnapTarget(
+        window.scrollY,
+        getExperienceTop(),
+        direction,
+      );
+      if (target != null) {
         e.preventDefault();
-        snapToContent();
-      } else if (e.deltaY < 0 && window.scrollY > window.innerHeight - 50) {
-        e.preventDefault();
-        snapToHero();
+        snapTo(target);
       }
     };
 
@@ -58,11 +88,10 @@ const useSnapScroll = () => {
     };
 
     const onTouchEnd = (e) => {
-      if (isSnapping || !inSnapZone()) return;
+      if (isSnapping) return;
       const dy = touchStartY - e.changedTouches[0].clientY;
-      if (dy > 30 && window.scrollY < 50) snapToContent();
-      else if (dy < -30 && window.scrollY > window.innerHeight - 50)
-        snapToHero();
+      if (dy > 30) trySnap("down");
+      else if (dy < -30) trySnap("up");
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });
@@ -76,7 +105,7 @@ const useSnapScroll = () => {
     };
   }, []);
 
-  return { showBelow };
+  return { showBelow, scrollToExperience };
 };
 
 export default useSnapScroll;

@@ -17,6 +17,7 @@ describe("SectionNav", () => {
       { label: "Certifications", href: "#certifications" },
       { label: "Projects", href: "#projects" },
       { label: "Skills", href: "#skills" },
+      { label: "Recent Posts", href: "#posts" },
     ];
 
     sections.forEach(({ label, href }) => {
@@ -26,9 +27,9 @@ describe("SectionNav", () => {
     });
   });
 
-  test("renders exactly 5 section links", () => {
+  test("renders exactly 6 section links", () => {
     render(<SectionNav />);
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(5);
+    expect(links).toHaveLength(6);
   });
 });
