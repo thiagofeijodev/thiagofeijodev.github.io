@@ -8,31 +8,10 @@ import { parseShareDate } from "./utils/parseShareDate.js";
 import { readCSV } from "./utils/readCSV.js";
 import { splitCommentary } from "./utils/splitCommentary.js";
 
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-const OUTPUT = resolve(__dirname, "../src/data/linkedin.json");
+const scriptDir = fileURLToPath(new URL(".", import.meta.url));
+const OUTPUT = resolve(scriptDir, "../src/data/linkedin.json");
 
-async function main() {
-  const input = process.argv[2];
-  if (!input) {
-    console.error(
-      "Usage: npm run parse-linkedin -- <path-to-export-folder-or-zip>",
-    );
-    process.exit(1);
-  }
-
-  const inputPath = resolve(input);
-  let exportDir;
-
-  if (inputPath.endsWith(".zip")) {
-    console.log(`Extracting ZIP: ${inputPath}`);
-    exportDir = await extractZip(inputPath);
-    console.log(`Extracted to: ${exportDir}`);
-  } else {
-    exportDir = inputPath;
-  }
-
-  console.log(`Reading export from: ${exportDir}`);
-
+export async function buildLinkedInData(exportDir) {
   const positions = await readCSV(exportDir, "Positions.csv");
   const experience = positions.map((p) => ({
     title: p["Title"] || "",
@@ -91,11 +70,7 @@ async function main() {
       };
     });
 
-  const existing = JSON.parse(await readFile(OUTPUT, "utf8").catch(() => "{}"));
-
-  const output = {
-    ...existing,
-    updatedAt: new Date().toISOString().slice(0, 10),
+  return {
     profile,
     experience,
     education,
@@ -103,19 +78,58 @@ async function main() {
     skills,
     posts,
   };
+}
+
+async function main() {
+  const input = process.argv[2];
+  if (!input) {
+    console.error(
+      "Usage: npm run parse-linkedin -- <path-to-export-folder-or-zip>",
+    );
+    process.exit(1);
+  }
+
+  const inputPath = resolve(input);
+  let exportDir;
+
+  if (inputPath.endsWith(".zip")) {
+    console.log(`Extracting ZIP: ${inputPath}`);
+    exportDir = await extractZip(inputPath);
+    console.log(`Extracted to: ${exportDir}`);
+  } else {
+    exportDir = inputPath;
+  }
+
+  console.log(`Reading export from: ${exportDir}`);
+
+  const data = await buildLinkedInData(exportDir);
+
+  const existing = JSON.parse(await readFile(OUTPUT, "utf8").catch(() => "{}"));
+
+  const output = {
+    ...existing,
+    updatedAt: new Date().toISOString().slice(0, 10),
+    ...data,
+  };
 
   await writeFile(OUTPUT, JSON.stringify(output, null, 2) + "\n");
   console.log(
-    `Done! Wrote ${experience.length} experience, ${education.length} education, ${certifications.length} certifications, ${skills.length} skills, ${posts.length} posts.`,
+    `Done! Wrote ${data.experience.length} experience, ${data.education.length} education, ${data.certifications.length} certifications, ${data.skills.length} skills, ${data.posts.length} posts.`,
   );
   console.log(`Output: ${OUTPUT}`);
 
   console.log("Generating CV PDF...");
-  const pdfScript = resolve(__dirname, "generate-cv-pdf.js");
+  const pdfScript = resolve(scriptDir, "generate-cv-pdf.js");
   spawnSync(process.execPath, [pdfScript], { stdio: "inherit" });
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isMain =
+  process.argv[1] &&
+  resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isMain) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

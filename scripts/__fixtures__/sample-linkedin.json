@@ -1,0 +1,36 @@
+{
+  "profile": {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "headline": "Software Engineer",
+    "summary": "Experienced developer.",
+    "location": "San Francisco, CA",
+    "website": "https://example.com"
+  },
+  "experience": [
+    {
+      "title": "Developer",
+      "company": "Acme Corp",
+      "startDate": "Jan 2022",
+      "endDate": "Jun 2024",
+      "description": "Built web apps."
+    }
+  ],
+  "education": [
+    {
+      "school": "State University",
+      "degree": "BS Computer Science",
+      "startDate": "Sep 2018",
+      "endDate": "May 2022"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified",
+      "authority": "Amazon",
+      "startDate": "Mar 2023",
+      "licenseNumber": "ABC-123"
+    }
+  ],
+  "skills": ["React", "TypeScript"]
+}

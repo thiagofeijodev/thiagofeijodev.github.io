@@ -89,4 +89,18 @@ describe("Certifications", () => {
     );
     expect(screen.getByText("Jan 2023 — Dec 2024")).toBeInTheDocument();
   });
+
+  test("sorts certifications by start date descending", () => {
+    render(
+      <Certifications
+        certifications={[
+          { name: "Older Cert", startDate: "Jan 2020" },
+          { name: "Newer Cert", startDate: "Jun 2024" },
+        ]}
+      />,
+    );
+    const titles = screen.getAllByRole("heading", { level: 3 });
+    expect(titles[0]).toHaveTextContent("Newer Cert");
+    expect(titles[1]).toHaveTextContent("Older Cert");
+  });
 });

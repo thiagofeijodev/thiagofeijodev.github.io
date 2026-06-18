@@ -30,6 +30,8 @@ npm install
 
 Run from the **repository root**:
 
+Tests for these utilities run with the root test suite (`npm test`); use `npm run test:scripts` to run only the scripts project.
+
 ### Full pipeline (JSON + PDF)
 
 ```bash

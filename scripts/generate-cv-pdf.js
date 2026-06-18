@@ -4,9 +4,9 @@ import { resolve } from "path";
 import { fileURLToPath } from "url";
 import PDFDocument from "pdfkit";
 
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-const DATA = resolve(__dirname, "../src/data/linkedin.json");
-const OUTPUT = resolve(__dirname, "../public/cv.pdf");
+const scriptDir = fileURLToPath(new URL(".", import.meta.url));
+const DATA = resolve(scriptDir, "../src/data/linkedin.json");
+const OUTPUT = resolve(scriptDir, "../public/cv.pdf");
 
 const DARK = "#1a1a1a";
 const MID = "#444444";
@@ -41,8 +41,7 @@ function bodyText(doc, text) {
   });
 }
 
-async function main() {
-  const data = JSON.parse(await readFile(DATA, "utf8"));
+export async function writeCvPdf(data, outputPath) {
   const {
     profile = {},
     experience = [],
@@ -56,10 +55,9 @@ async function main() {
     margin: 50,
     info: { Title: "CV" },
   });
-  const stream = createWriteStream(OUTPUT);
+  const stream = createWriteStream(outputPath);
   doc.pipe(stream);
 
-  // ── Header ────────────────────────────────────────────────────────────────
   const name = [profile.firstName, profile.lastName].filter(Boolean).join(" ");
   doc
     .fontSize(24)
@@ -80,13 +78,11 @@ async function main() {
   doc.moveDown(0.6);
   rule(doc);
 
-  // ── Summary ───────────────────────────────────────────────────────────────
   if (profile.summary) {
     sectionHeading(doc, "Summary");
     bodyText(doc, profile.summary);
   }
 
-  // ── Experience ────────────────────────────────────────────────────────────
   if (experience.length) {
     sectionHeading(doc, "Experience");
     for (const job of experience) {
@@ -115,7 +111,6 @@ async function main() {
     }
   }
 
-  // ── Education ─────────────────────────────────────────────────────────────
   if (education.length) {
     sectionHeading(doc, "Education");
     for (const edu of education) {
@@ -142,7 +137,6 @@ async function main() {
     }
   }
 
-  // ── Certifications ────────────────────────────────────────────────────────
   if (certifications.length) {
     sectionHeading(doc, "Certifications");
     for (const cert of certifications) {
@@ -177,7 +171,6 @@ async function main() {
     }
   }
 
-  // ── Skills ────────────────────────────────────────────────────────────────
   if (skills.length) {
     sectionHeading(doc, "Skills");
     doc
@@ -192,11 +185,21 @@ async function main() {
     stream.on("finish", res);
     stream.on("error", rej);
   });
+}
 
+async function main() {
+  const data = JSON.parse(await readFile(DATA, "utf8"));
+  await writeCvPdf(data, OUTPUT);
   console.log(`CV PDF generated: ${OUTPUT}`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isMain =
+  process.argv[1] &&
+  resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isMain) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

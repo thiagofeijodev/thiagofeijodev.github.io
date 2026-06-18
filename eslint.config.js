@@ -89,6 +89,16 @@ const config = [
   },
 
   {
+    files: ["scripts/**/__tests__/**/*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+      },
+    },
+  },
+
+  {
     files: ["scripts/**/*.js"],
     languageOptions: {
       globals: globals.node,

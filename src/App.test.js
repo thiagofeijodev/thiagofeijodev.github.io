@@ -72,3 +72,21 @@ describe("App Component", () => {
     );
   });
 });
+
+describe("App /posts route", () => {
+  test("renders the posts page", async () => {
+    render(
+      <MemoryRouter initialEntries={["/posts"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    expect(
+      await screen.findByRole("heading", { name: "All Posts" }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "← Back" })).toHaveAttribute(
+      "href",
+      "/",
+    );
+  });
+});

@@ -1,29 +1,11 @@
 import styles from "./Certifications.module.css";
-
-const MONTHS = {
-  Jan: 0,
-  Feb: 1,
-  Mar: 2,
-  Apr: 3,
-  May: 4,
-  Jun: 5,
-  Jul: 6,
-  Aug: 7,
-  Sep: 8,
-  Oct: 9,
-  Nov: 10,
-  Dec: 11,
-};
-const parseDate = (str = "") => {
-  const [mon, year] = str.split(" ");
-  return parseInt(year) * 12 + (MONTHS[mon] ?? 0);
-};
+import { parseCertDate } from "../utils/parseCertDate";
 
 const Certifications = ({ certifications }) => {
   if (!certifications.length) return null;
 
   const sorted = [...certifications].sort(
-    (a, b) => parseDate(b.startDate) - parseDate(a.startDate),
+    (a, b) => parseCertDate(b.startDate) - parseCertDate(a.startDate),
   );
 
   return (

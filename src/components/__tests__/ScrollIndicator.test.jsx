@@ -1,14 +1,19 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import ScrollIndicator from "../ScrollIndicator";
 
 describe("ScrollIndicator", () => {
   beforeEach(() => {
+    jest.useFakeTimers();
     window.scrollTo = jest.fn();
     Object.defineProperty(window, "scrollY", {
       value: 0,
       writable: true,
       configurable: true,
     });
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
   });
 
   test("renders the scroll down indicator", () => {
@@ -35,5 +40,18 @@ describe("ScrollIndicator", () => {
     });
     fireEvent.scroll(window);
     expect(screen.queryByLabelText("Scroll down")).not.toBeInTheDocument();
+  });
+
+  test("auto-scrolls after delay when autoScroll is enabled", () => {
+    render(<ScrollIndicator autoScroll />);
+
+    act(() => {
+      jest.advanceTimersByTime(4000);
+    });
+
+    expect(window.scrollTo).toHaveBeenCalledWith({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
   });
 });
