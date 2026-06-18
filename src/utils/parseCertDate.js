@@ -14,6 +14,12 @@ const MONTHS = {
 };
 
 export function parseCertDate(str = "") {
-  const [mon, year] = str.split(" ");
-  return parseInt(year) * 12 + (MONTHS[mon] ?? 0);
+  const trimmed = str.trim();
+  if (!trimmed || trimmed === "Present") return -Infinity;
+
+  const [mon, year] = trimmed.split(" ");
+  const parsedYear = parseInt(year, 10);
+  if (Number.isNaN(parsedYear)) return -Infinity;
+
+  return parsedYear * 12 + (MONTHS[mon] ?? 0);
 }
