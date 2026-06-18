@@ -6,44 +6,52 @@ import prettier from "eslint-config-prettier";
 import eslint from "@eslint/js";
 
 const config = [
-  // Base configuration for all files
+  {
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/docs/**",
+      "**/build/**",
+      "**/release/**",
+      "**/*.d.ts",
+      "**/coverage/**",
+      "**/.cache/**",
+      "**/bun.lock",
+      "**/package-lock.json",
+    ],
+  },
+
   eslint.configs.recommended,
-  react.configs.flat.recommended,
   prettier,
 
-  // Configuration files (including this one)
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
+  },
+
   {
     files: [
       "eslint.config.js",
-      ".config/**/*.{js,ts,mjs}",
+      ".config/**/*.{js,mjs}",
       "commitlint.config.js",
       "jest.config.mjs",
     ],
     languageOptions: {
-      globals: {
-        require: "readonly",
-        module: "readonly",
-        exports: "readonly",
-        __dirname: "readonly",
-        __filename: "readonly",
-        process: "readonly",
-        console: "readonly",
-        setTimeout: "readonly",
-        clearTimeout: "readonly",
-        setInterval: "readonly",
-        clearInterval: "readonly",
-      },
+      globals: globals.node,
     },
     rules: {
-      "@typescript-eslint/no-var-requires": "off",
       "no-console": "off",
     },
   },
 
-  // React files configuration
   {
     files: ["src/**/*.{js,jsx}"],
+    ...react.configs.flat.recommended,
     languageOptions: {
+      ...react.configs.flat.recommended.languageOptions,
       ecmaVersion: "latest",
       sourceType: "module",
       globals: {
@@ -52,13 +60,14 @@ const config = [
         process: "readonly",
       },
       parserOptions: {
+        ...react.configs.flat.recommended.languageOptions?.parserOptions,
         ecmaFeatures: {
           jsx: true,
         },
       },
     },
     plugins: {
-      react,
+      ...react.configs.flat.recommended.plugins,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
     },
@@ -66,8 +75,10 @@ const config = [
       react: { version: "detect" },
     },
     rules: {
-      "react/react-in-jsx-scope": "off", // Not needed with React 17+
-      "react/prop-types": "off", // not using prop-types
+      ...react.configs.flat.recommended.rules,
+      ...reactHooks.configs.flat.recommended.rules,
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
@@ -77,34 +88,14 @@ const config = [
     },
   },
 
-  // Scripts (scraper, etc.)
   {
-    files: ["scripts/**/*.mjs"],
+    files: ["scripts/**/*.js"],
     languageOptions: {
-      globals: {
-        ...globals.node,
-        // page.evaluate() callbacks run in browser context
-        ...globals.browser,
-      },
+      globals: globals.node,
     },
     rules: {
       "no-console": "off",
     },
-  },
-
-  // Ignore patterns
-  {
-    ignores: [
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/build/**",
-      "**/release/**",
-      "**/*.d.ts",
-      "**/coverage/**",
-      "**/.cache/**",
-      "**/bun.lock",
-      "**/package-lock.json",
-    ],
   },
 ];
 

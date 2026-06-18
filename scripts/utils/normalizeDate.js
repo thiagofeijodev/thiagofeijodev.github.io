@@ -1,7 +1,20 @@
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 export function normalizeDate(str) {
-  if (!str || !str.trim()) return 'Present';
+  if (!str || !str.trim()) return "Present";
   str = str.trim();
 
   if (/^[A-Z][a-z]{2} \d{4}$/.test(str)) return str;

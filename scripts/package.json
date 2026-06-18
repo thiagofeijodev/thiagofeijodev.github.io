@@ -1,0 +1,16 @@
+{
+  "name": "@thiagofeijodev/linkedin-tools",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.9.0"
+  },
+  "scripts": {
+    "parse-linkedin": "node parse-linkedin-export.js",
+    "generate-cv": "node generate-cv-pdf.js"
+  },
+  "dependencies": {
+    "pdfkit": "^0.18.0"
+  }
+}

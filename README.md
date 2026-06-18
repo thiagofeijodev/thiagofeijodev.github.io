@@ -41,6 +41,17 @@ To run this project locally, follow these steps:
 
    The application will be available at `http://localhost:3000`.
 
+## LinkedIn data & CV
+
+Portfolio content (experience, skills, posts) and the downloadable CV are generated from a LinkedIn data export. See [scripts/README.md](scripts/README.md) for full instructions.
+
+Quick reference from the repo root:
+
+```bash
+npm run parse-linkedin -- /path/to/linkedin-export
+npm run generate-cv
+```
+
 ## 🧪 Running Tests
 
 To execute the test suite:

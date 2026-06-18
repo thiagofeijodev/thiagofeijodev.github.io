@@ -1,5 +1,5 @@
 export function splitCommentary(text) {
-  if (!text) return { title: '', excerpt: '' };
+  if (!text) return { title: "", excerpt: "" };
   text = text.trim();
 
   const sentenceEnd = text.search(/[.!?]\s/);
@@ -10,9 +10,9 @@ export function splitCommentary(text) {
     };
   }
 
-  if (text.length <= 80) return { title: text, excerpt: '' };
+  if (text.length <= 80) return { title: text, excerpt: "" };
 
-  const cut = text.lastIndexOf(' ', 80);
+  const cut = text.lastIndexOf(" ", 80);
   const boundary = cut > 0 ? cut : 80;
   return {
     title: text.slice(0, boundary).trim(),

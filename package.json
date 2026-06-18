@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "./",
   "type": "module",
+  "workspaces": [
+    "scripts"
+  ],
   "engines": {
     "npm": "11.6.0",
     "node": "24.9.0"
@@ -12,13 +15,13 @@
     "start": "node .config/rspack/rspack.dev.mjs",
     "build": "rspack --mode production --config .config/rspack/rspack.prod.mjs",
     "analyzer": "rspack build --analyze  --mode development --config .config/rspack/rspack.prod.mjs",
-    "lint": "eslint --ext js,jsx 'src/**/**.js' --max-warnings 0",
+    "lint": "eslint src scripts .config eslint.config.js --max-warnings 0",
     "format": "prettier --write .",
     "test": "jest --maxConcurrency=2 --maxWorkers=2",
     "test:ci": "jest --json --outputFile=test-results/jest-results.json",
     "prepare": "husky",
-    "parse-linkedin": "node scripts/parse-linkedin-export.mjs",
-    "generate-cv": "node scripts/generate-cv-pdf.mjs"
+    "parse-linkedin": "npm run parse-linkedin -w scripts --",
+    "generate-cv": "npm run generate-cv -w scripts"
   },
   "dependencies": {
     "core-js": "^3.47.0",
@@ -36,7 +39,6 @@
     "favicons-rspack-plugin": "^7.0.0",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "^5.6.5",
-    "pdfkit": "^0.18.0",
     "postcss-loader": "^8.2.0",
     "react-refresh": "^0.18.0",
     "style-loader": "^4.0.0",
